@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<KSPDirectory>../../_Assemblies</KSPDirectory>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="$(KSPDirectory)/Assembly-CSharp.dll" />
+		<Reference Include="$(KSPDirectory)/UnityEngine.dll" />
+		<Reference Include="$(KSPDirectory)/UnityEngine.CoreModule.dll" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+# C#: Build
+bin/
+obj/
+**/bin/
+**/obj/
