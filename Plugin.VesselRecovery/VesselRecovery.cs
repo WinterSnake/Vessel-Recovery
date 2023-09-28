@@ -12,4 +12,12 @@ namespace VesselRecovery;
 public class VesselRecovery : MonoBehaviour
 {
     /* Instance Methods */
+	public void Start()
+	{
+		Debug.Log($"[VesselRecovery]Time started: {Time.realtimeSinceStartup}");
+	}
+	/* Properties */
+	public static Settings Settings {
+		get { return HighLogic.CurrentGame.Parameters.CustomParams<Settings>(); }
+	}
 }

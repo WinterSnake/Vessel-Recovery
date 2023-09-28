@@ -1,1 +1,1 @@
-# Kerbal Space Program: Vessel Recovery
+# Vessel Recovery

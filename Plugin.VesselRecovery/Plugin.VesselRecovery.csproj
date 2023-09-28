@@ -1,11 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<KSPDirectory>../../_Assemblies</KSPDirectory>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>10.0</LangVersion>
 	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="$(KSPDirectory)/Assembly-CSharp.dll" />
-		<Reference Include="$(KSPDirectory)/UnityEngine.dll" />
-		<Reference Include="$(KSPDirectory)/UnityEngine.CoreModule.dll" />
+	<PropertyGroup>
+		<AssemblyDirectory>../../_Assemblies</AssemblyDirectory>
+		<DataDirectory>../../_GameData</DataDirectory>
+		<ModDirectory>../../_Mods</ModDirectory>
+	</PropertyGroup>
+	<ItemGroup Label="KSP/Unity Linking">
+		<Reference Include="$(AssemblyDirectory)/Assembly-CSharp.dll" Private="False" />
+		<Reference Include="$(AssemblyDirectory)/System.dll" Private="False" />
+		<Reference Include="$(AssemblyDirectory)/UnityEngine.dll" Private="False" />
+		<Reference Include="$(AssemblyDirectory)/UnityEngine.CoreModule.dll" Private="False" />
+	</ItemGroup>
+	<ItemGroup Label="External Mod Linking">
 	</ItemGroup>
 </Project>
