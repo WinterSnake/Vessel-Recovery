@@ -1,0 +1,39 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup Label="User Defined">
+		<GameDataDirectory>../_GameData/</GameDataDirectory>
+		<Configuration>Debug</Configuration>
+		<OutputPath>$(MSBuildProjectDirectory)/bin</OutputPath>
+		<OutDir>$(OutputPath)/$(MSBuildProjectName)</OutDir>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Localizations Include="Localization/*.cfg" />
+	</ItemGroup>
+
+	<Target Name="_IsProjectRestoreSupported" Returns="@(_ValidProjectsForRestore)">
+		<ItemGroup>
+			<_ValidProjectsForRestore Include="$(MSBuildProjectFullPath)" />
+		</ItemGroup>
+	</Target>
+	<Target Name="Restore" />
+
+	<Target Name="Build">
+		<MSBuild Projects="Plugin.VesselRecovery/Plugin.VesselRecovery.csproj" Properties="Configuration=$(Configuration)">
+			<Output TaskParameter="TargetOutputs" ItemName="Plugins" />
+		</MSBuild>
+	</Target>
+	<Target Name="Package" AfterTargets="Build">
+		<Message Text="Packaging.." Importance="High" />
+		<MakeDir Directories="$(OutDir);$(OutDir)/Plugins;$(OutDir)/Localization" />
+		<Copy SourceFiles="@(Plugins)" DestinationFolder="$(OutDir)/Plugins" />
+		<Copy SourceFiles="@(Localizations)" DestinationFolder="$(OutDir)/Localization" />
+	</Target>
+
+	<Target Name="DebugInstall" AfterTargets="Package" Condition="'$(Configuration)'=='Debug'">
+		<Message Text="Installing.." Importance="High" />
+		<ItemGroup>
+			<Data Include="$(OutputPath)/**/*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(Data)" DestinationFolder="$(GameDataDirectory)/%(RecursiveDir)" />
+	</Target>
+</Project>

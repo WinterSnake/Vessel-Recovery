@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VesselRecovery", "VesselRecovery.proj", "{B10BC287-B1E0-4E67-8E31-FC6AC87EF0F3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.VesselRecovery", "Plugin.VesselRecovery\Plugin.VesselRecovery.csproj", "{BAAB9E81-6236-49C8-BF64-53F435D6884E}"
 EndProject
 Global
@@ -18,5 +20,9 @@ Global
 		{BAAB9E81-6236-49C8-BF64-53F435D6884E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAAB9E81-6236-49C8-BF64-53F435D6884E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAAB9E81-6236-49C8-BF64-53F435D6884E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10BC287-B1E0-4E67-8E31-FC6AC87EF0F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10BC287-B1E0-4E67-8E31-FC6AC87EF0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10BC287-B1E0-4E67-8E31-FC6AC87EF0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10BC287-B1E0-4E67-8E31-FC6AC87EF0F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
