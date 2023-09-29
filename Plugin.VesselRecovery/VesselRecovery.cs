@@ -15,9 +15,13 @@ public class VesselRecovery : MonoBehaviour
 	public void Start()
 	{
 		Debug.Log($"[VesselRecovery]Time started: {Time.realtimeSinceStartup}");
+		GameEvents.onVesselCreate.Add(HandleVessel);
+	}
+	public void HandleVessel(Vessel vessel)
+	{
+		if (!Settings.Enable)
+			return;
 	}
 	/* Properties */
-	public static Settings Settings {
-		get { return HighLogic.CurrentGame.Parameters.CustomParams<Settings>(); }
-	}
+	public static Settings Settings { get { return HighLogic.CurrentGame.Parameters.CustomParams<Settings>(); }}
 }

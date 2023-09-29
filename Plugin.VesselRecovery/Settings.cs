@@ -20,5 +20,5 @@ public class Settings : GameParameters.CustomParameterNode
 	public override bool HasPresets { get { return false; }}
 	// Gameplay
 	[GameParameters.CustomParameterUI("#VR_SETTINGS_ENABLED")]
-	public new bool Enabled = true;
+	public bool Enable = true;
 }

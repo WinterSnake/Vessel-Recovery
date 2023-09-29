@@ -6,16 +6,15 @@
 		<OutDir>$(OutputPath)/$(MSBuildProjectName)</OutDir>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<AssemblyDirectory>../_Assemblies</AssemblyDirectory>
+		<DataDirectory>../_GameData</DataDirectory>
+		<ModDirectory>../_Mods</ModDirectory>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<Localizations Include="Localization/*.cfg" />
 	</ItemGroup>
-
-	<Target Name="_IsProjectRestoreSupported" Returns="@(_ValidProjectsForRestore)">
-		<ItemGroup>
-			<_ValidProjectsForRestore Include="$(MSBuildProjectFullPath)" />
-		</ItemGroup>
-	</Target>
-	<Target Name="Restore" />
 
 	<Target Name="Build">
 		<MSBuild Projects="Plugin.VesselRecovery/Plugin.VesselRecovery.csproj" Properties="Configuration=$(Configuration)">
